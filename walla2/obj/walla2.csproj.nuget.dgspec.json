@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\richard.nilsson\\New folder\\walla2\\walla2\\walla2\\walla2.csproj": {}
+    "C:\\Users\\richard.nilsson\\New folder\\walla2\\walla2\\walla2\\walla2.csproj": {}
   },
   "projects": {
-    "c:\\Users\\richard.nilsson\\New folder\\walla2\\walla2\\walla2\\walla2.csproj": {
+    "C:\\Users\\richard.nilsson\\New folder\\walla2\\walla2\\walla2\\walla2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\richard.nilsson\\New folder\\walla2\\walla2\\walla2\\walla2.csproj",
+        "projectUniqueName": "C:\\Users\\richard.nilsson\\New folder\\walla2\\walla2\\walla2\\walla2.csproj",
         "projectName": "walla2",
-        "projectPath": "c:\\Users\\richard.nilsson\\New folder\\walla2\\walla2\\walla2\\walla2.csproj",
+        "projectPath": "C:\\Users\\richard.nilsson\\New folder\\walla2\\walla2\\walla2\\walla2.csproj",
         "packagesPath": "C:\\Users\\richard.nilsson\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\richard.nilsson\\New folder\\walla2\\walla2\\walla2\\obj\\",
+        "outputPath": "C:\\Users\\richard.nilsson\\New folder\\walla2\\walla2\\walla2\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
