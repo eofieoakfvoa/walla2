@@ -1,29 +1,17 @@
 ﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
-Scene test = new();
-string guess = Console.ReadLine();
-
-if (guess == "a"){
-    test.ChangeScene<Menu>();
-}
-if (guess == "b"){
-    test.ChangeScene<Battle>();
-}
-string guess2 = Console.ReadLine();
-
-if (guess2 == "a"){
-    test.ChangeScene<Menu>();
-}
-if (guess2 == "b"){
-    test.ChangeScene<Battle>();
-}
-string guess3 = Console.ReadLine();
-
-if (guess3 == "a"){
-    test.ChangeScene<Menu>();
-}
-if (guess3 == "b"){
-    test.ChangeScene<Battle>();
-}
+using System;
 
 
+class Program1
+{
+    static void Main()
+    {
+        Console.WriteLine("Hello, World!");
+        Scene test = new();
+        test.ChangeScene<Menu>();
+        Console.WriteLine("Hello");
+        test.ChangeScene<DamageTaken>();
+        Console.WriteLine("YOU TOOK 50 DAMAGE");
+        Console.ReadLine();
+    }
+}

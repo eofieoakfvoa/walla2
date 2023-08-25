@@ -4,12 +4,17 @@ public class Scene
 {
  public ConsoleColor foregroundColor;
  public ConsoleColor backgroundColor;
- private bool ClearLine;
+ public bool clearLine;
+ 
     public void ChangeScene<T>() where T : Scene, new()
     {
         T newscene = new();
         Console.BackgroundColor = newscene.backgroundColor;
         Console.ForegroundColor = newscene.foregroundColor;
+        if (newscene.clearLine == true)
+        {
+            Console.Clear();
+        }
     }
 
 }
@@ -18,8 +23,9 @@ public class Menu : Scene
 {
     public Menu()
     {
-        foregroundColor = ConsoleColor.Black;
-        backgroundColor = ConsoleColor.DarkBlue;
+        foregroundColor = ConsoleColor.DarkBlue;
+        backgroundColor = ConsoleColor.Black;
+        clearLine = true;
         
     }
 }
@@ -27,7 +33,17 @@ public class Battle : Scene
 {
     public Battle()
     {
-        foregroundColor = ConsoleColor.White;
-        backgroundColor = ConsoleColor.DarkBlue;
+        foregroundColor = ConsoleColor.DarkBlue;
+        backgroundColor = ConsoleColor.DarkGray;
+        clearLine = true;
+    }
+}
+public class DamageTaken : Scene
+{
+    public DamageTaken()
+    {
+        foregroundColor = ConsoleColor.Red;
+        backgroundColor = ConsoleColor.DarkRed;
+        clearLine = false;
     }
 }
