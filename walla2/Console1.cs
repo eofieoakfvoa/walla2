@@ -1,7 +1,7 @@
 using System.Data;
 using System.Numerics;
 using System.Runtime.InteropServices;
-
+//gör så den ritar ut från en dictionary ksk så att key vector2 t.ex 1,2 ska va ett i, kanske gör det lättare i framtiden?
 public class Console1
 {
     //ändra 1920, 1080 till en sak som faktiskt fungerar på alla skärmar
@@ -30,13 +30,23 @@ public class Console1
             }
             maxX = i;
         }
+        //cleara
         File.WriteAllText(@"MenuTemplate.txt", string.Empty);
         for (int Y = 0; Y < maxY; Y++)
         {
-            string Line = "_";
+            string Line = string.Empty;
             for (int x = 0; x < maxX; x++)
             {
-                Line = Line + "_";
+                //Line = Line + "_";
+                if (Y == 0 || x == 0 || Y == maxY-1 || x == maxX-1)
+                {
+                    Line = Line + "i";
+                }
+                else
+                {
+                    Line = Line + " ";
+                }
+                
             } 
             File.AppendAllText(@"MenuTemplate.txt", Line + Environment.NewLine);
         }
