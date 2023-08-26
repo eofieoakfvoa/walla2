@@ -8,6 +8,7 @@ class Program1
     {
         Console1 consoletest = new();
         consoletest.InitConsole();
+        consoletest.Update();
         Scene test = new();
         Menu init = new();
         init.initMenu();
