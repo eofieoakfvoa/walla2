@@ -2,15 +2,17 @@
 //▒ ser ut som bricks typ ■ pixel nästan? □, https://en.wikipedia.org/wiki/Geometric_Shapes_(Unicode_block)
 
 using System.Numerics;
-public class Console1
+using System.Threading.Tasks.Dataflow;
+
+public static class Console1
 {
     //ändra 1920, 1080 till en sak som faktiskt fungerar på alla skärmar
-    float rowtopixelWidth = 1920 / Console.LargestWindowWidth;
-    float rowtopixelHeight = 1080 / Console.LargestWindowHeight;
-    public Dictionary<Vector2, string> Grid = new();
-    private int maxY = 0;
-    private int maxX = 0;
-    public void InitConsole()
+    static float rowtopixelWidth = 1920 / Console.LargestWindowWidth;
+    static float rowtopixelHeight = 1080 / Console.LargestWindowHeight;
+    public static Dictionary<Vector2, string> Grid = new();
+    private static int maxY = 0;
+    private static int maxX = 0;
+    public static void InitConsole()
     {
         //console använder rows, columns istället för pixlar därför behöver converta, pixelwidth/height inte perfekt men fungerar typ
         int windowsPixelWidth = 512;
@@ -32,9 +34,10 @@ public class Console1
         }
 
     }
-    public void Update()
+    public static void Update()
     {
         File.WriteAllText(@"Screen.txt", string.Empty);
+        Console.Clear();
         //draw
         for (int Y = 0; Y < maxY; Y++)
         {
@@ -54,7 +57,7 @@ public class Console1
         Console.WriteLine(line);
         }       
     }
-    public void AddText(string Text, Vector2 Position)
+    public static void AddText(string Text, Vector2 Position)
     {
         Position.X = Position.X - Text.Length;
         for (int i = 0; i < Text.Length; i++)
@@ -63,6 +66,5 @@ public class Console1
             Grid[new Vector2(Position.X + i, Position.Y)] = letter;
         }
     }
-
 
 }
