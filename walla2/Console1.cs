@@ -1,5 +1,6 @@
 using System.Data;
 using System.Numerics;
+using System.Runtime.InteropServices;
 
 public class Console1
 {
@@ -15,6 +16,8 @@ public class Console1
         int windowsWidth = Convert.ToInt32(windowsPixelWidth/rowtopixelWidth);
         int windowsHeight = Convert.ToInt32(windowsPixelHeight/rowtopixelHeight);
         Console.SetWindowSize(windowsWidth,windowsHeight);
+        int maxY = 0;
+        int maxX = 0;
 
         for (int i = 0; i < windowsWidth; i++)
         {
@@ -22,7 +25,18 @@ public class Console1
             {
                 Vector2 test = new Vector2(i,y);
                 grid.Add(test);
+                maxY = y;
             }
+            maxX = i;
+        }
+        for (int Y = 0; Y < maxY; Y++)
+        {
+            string Line = "_";
+            for (int x = -1; x < maxX; x++)
+            {
+                Line = Line + "_";
+            } 
+            File.AppendAllText(@"MenuTemplate.txt", Line + Environment.NewLine);
         }
 
     }

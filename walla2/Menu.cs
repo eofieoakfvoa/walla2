@@ -12,9 +12,8 @@ public class Menu
         string[] textFromFile = File.ReadAllLines(@"MenuTemplate.txt");
         foreach (string line in textFromFile)
         {
-           // Console.WriteLine(line);
+           Console.WriteLine(line);
         }         
-        
 
     }
 }
