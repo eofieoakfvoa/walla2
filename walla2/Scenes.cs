@@ -5,7 +5,7 @@ public class Scene
  public ConsoleColor foregroundColor;
  public ConsoleColor backgroundColor;
  public bool clearLine;
- 
+
     public void ChangeScene<T>() where T : Scene, new()
     {
         T newscene = new();
@@ -19,9 +19,9 @@ public class Scene
 
 }
 
-public class Menu : Scene
+public class MenuColors : Scene
 {
-    public Menu()
+    public MenuColors()
     {
         foregroundColor = ConsoleColor.DarkBlue;
         backgroundColor = ConsoleColor.Black;
@@ -29,9 +29,9 @@ public class Menu : Scene
         
     }
 }
-public class Battle : Scene
+public class BattleColors : Scene
 {
-    public Battle()
+    public BattleColors()
     {
         foregroundColor = ConsoleColor.DarkBlue;
         backgroundColor = ConsoleColor.DarkGray;

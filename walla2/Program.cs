@@ -8,8 +8,8 @@ class Program1
     {
         Console.WriteLine("Hello, World!");
         Scene test = new();
-        test.ChangeScene<Menu>();
-        Console.WriteLine("Hello");
+        Menu init = new();
+        init.initMenu();
         test.ChangeScene<DamageTaken>();
         Console.WriteLine("YOU TOOK 50 DAMAGE");
         Console.ReadLine();
