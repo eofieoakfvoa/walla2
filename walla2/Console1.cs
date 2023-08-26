@@ -29,6 +29,7 @@ public class Console1
             }
             maxX = i;
         }
+        File.WriteAllText(@"MenuTemplate.txt", string.Empty);
         for (int Y = 0; Y < maxY; Y++)
         {
             string Line = "_";
