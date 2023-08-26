@@ -54,4 +54,15 @@ public class Console1
         Console.WriteLine(line);
         }       
     }
+    public void AddText(string Text, Vector2 Position)
+    {
+        Position.X = Position.X - Text.Length;
+        for (int i = 0; i < Text.Length; i++)
+        {
+            string letter = Text[i].ToString();
+            Grid[new Vector2(Position.X + i, Position.Y)] = letter;
+        }
+    }
+
+
 }
