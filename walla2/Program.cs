@@ -7,6 +7,8 @@ class Program1
     static void Main()
     {
         Console.WriteLine("Hello, World!");
+        Console1 consoletest = new();
+        consoletest.InitConsole();
         Scene test = new();
         Menu init = new();
         init.initMenu();
