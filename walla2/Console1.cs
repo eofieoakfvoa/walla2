@@ -1,8 +1,7 @@
-using System.Data;
-using System.Numerics;
-using System.Runtime.InteropServices;
 //gör så den ritar ut från en dictionary ksk så att key vector2 t.ex 1,2 ska va ett i, kanske gör det lättare i framtiden?
 //▒ ser ut som bricks typ ■ pixel nästan? □, https://en.wikipedia.org/wiki/Geometric_Shapes_(Unicode_block)
+
+using System.Numerics;
 public class Console1
 {
     //ändra 1920, 1080 till en sak som faktiskt fungerar på alla skärmar
@@ -15,27 +14,27 @@ public class Console1
     {
         //console använder rows, columns istället för pixlar därför behöver converta, pixelwidth/height inte perfekt men fungerar typ
         int windowsPixelWidth = 512;
-        //för någon anledning är max 1071 på en 1080 skärm?,,,,, 512 / 400
+        //--för någon anledning är max 1071 på en 1080 skärm?,,,,, 512 / 400
         int windowsPixelHeight = 400;
         int windowsWidth = (int)MathF.Floor(windowsPixelWidth/rowtopixelWidth);
         int windowsHeight = (int)MathF.Floor(windowsPixelHeight/rowtopixelHeight);
         Console.SetWindowSize(windowsWidth, windowsHeight);
-
-        for (int i = 0; i < windowsWidth; i++)
+        //skapar en grid där allting är tomt by default.
+        for (int x = 0; x < windowsWidth; x++)
         {
             for (int y = 0; y < windowsHeight; y++)
             {
-                Vector2 test = new Vector2(i,y);
-                Grid.Add(test, "_");
+                Vector2 test = new Vector2(x,y);
+                Grid.Add(test, " ");
                 maxY = y;
             }
-            maxX = i;
+            maxX = x;
         }
 
     }
     public void Update()
     {
-        File.WriteAllText(@"MenuTemplate.txt", string.Empty);
+        File.WriteAllText(@"Screen.txt", string.Empty);
         //draw
         for (int Y = 0; Y < maxY; Y++)
         {
@@ -46,7 +45,13 @@ public class Console1
                 Line = Line + Grid[new Vector2(x,Y)];
                 
             } 
-            File.AppendAllText(@"MenuTemplate.txt", Line + Environment.NewLine);
-         }
+        //refresh
+        File.AppendAllText(@"Screen.txt", Line + Environment.NewLine);
+        }
+        string[] textFromFile = File.ReadAllLines(@"Screen.txt");
+        foreach (string line in textFromFile)
+        {
+        Console.WriteLine(line);
+        }       
     }
 }
