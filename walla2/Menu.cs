@@ -12,20 +12,31 @@ public class Menu
 
         Scene test = new();
         test.ChangeScene<MenuColors>(); 
-        string text1 = File.ReadLines(@"text.txt").ElementAtOrDefault(1);
-        string[] text1split = text1.Split("|");
-        Vector2 text1vector = new Vector2(int.Parse(text1split[1]), int.Parse(text1split[2]));  
-        Console1.AddText(text1split[0], text1vector);
-        string text2 = File.ReadLines(@"text.txt").ElementAtOrDefault(2);
-        string[] text2split = text2.Split("|");
-        Vector2 text2vector = new Vector2(int.Parse(text2split[1]), int.Parse(text2split[2]));  
-        Console1.AddText(text1split[0], text1vector);
-        string text3 = File.ReadLines(@"text.txt").ElementAtOrDefault(3);
-        string[] text3split = text3.Split("|");
-        Vector2 text3vector = new Vector2(int.Parse(text3split[1]), int.Parse(text3split[2]));  
-        Console1.AddText(text1split[0], text1vector);
-        Console1.AddText(text2split[0], text2vector);
-        Console1.AddText(text3split[0], text3vector);
+        
+        //kanske göra så att loadtext() gör addtext() automatiskt så blir coden mindre?
+        (string text, Vector2 location) = Console1.LoadText(1);
+        (string text2, Vector2 location2) = Console1.LoadText(2);
+        (string text3, Vector2 location3) = Console1.LoadText(3);
+        Console1.AddText(text, location);
+        Console1.AddText(text2, location2);
+        Console1.AddText(text3, location3);
+
+
         Console1.Update();
+
+        while (Console.ReadKey().Key == ConsoleKey.DownArrow) 
+        {
+            
+        }
+        while (Console.ReadKey().Key == ConsoleKey.UpArrow) 
+        {
+                
+        }
+        while (Console.ReadKey().Key == ConsoleKey.Enter) 
+        {
+                
+        }
+
+
     }
 }

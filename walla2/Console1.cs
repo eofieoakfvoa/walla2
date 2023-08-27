@@ -59,12 +59,19 @@ public static class Console1
     }
     public static void AddText(string Text, Vector2 Position)
     {
-        Position.X = Position.X - Text.Length;
+        Position.X = Position.X - Text.Length/2;
         for (int i = 0; i < Text.Length; i++)
         {
             string letter = Text[i].ToString();
             Grid[new Vector2(Position.X + i, Position.Y)] = letter;
         }
+    }
+    public static (string, Vector2) LoadText(int Location)
+    {
+        string Text = File.ReadLines(@"text.txt").ElementAtOrDefault(Location);
+        string[] textSplit = Text.Split("|");
+        Vector2 text1vector = new Vector2(int.Parse(textSplit[1]), int.Parse(textSplit[2]));  
+        return (textSplit[0], text1vector);
     }
 
 }
