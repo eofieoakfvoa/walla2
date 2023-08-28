@@ -8,8 +8,8 @@ public static class ConsoleManager
     static float rowtopixelWidth = 1920 / Console.LargestWindowWidth;
     static float rowtopixelHeight = 1080 / Console.LargestWindowHeight;
     public static Dictionary<Vector2, string> Grid = new();
-    private static int maxY = 0;
-    private static int maxX = 0;
+    public static int maxY = 0;
+    public static int maxX = 0;
     public static string currentScreen = "Console";
     public static void InitConsole()
     {
@@ -72,10 +72,6 @@ public static class ConsoleManager
         Vector2 text1vector = new Vector2(int.Parse(textSplit[1]), int.Parse(textSplit[2]));
         return (textSplit[0], text1vector);
     }
-    public static void changeBorder()
-    {
-        //save fil som den tar current border ifrån tar nästa
-        string border = "■▒i";
-    }
+
 
 }

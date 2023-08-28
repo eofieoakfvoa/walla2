@@ -55,4 +55,6 @@ public class TempHighlightText
         }
     return 0; // borde aldrig hända?
     }
+    //Up Down funktion som ändrar Selectedoption??
+    //Left to right funktion 
 }

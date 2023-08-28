@@ -30,7 +30,9 @@ public class Options
         //Måste ändå fixa detta senare ksk en class som e hardcoded skulle iallafall se snyggare ut och va hardcoded i båda fallen HAHAHAHAHAHAHAHAHAHAHAHAHAHHAHAHAHAHAHAHAHAHAHHAHAHHAHAHAHAHAHHAHAHAHAHAHAHHAHAHAHAHAHAHAHHAHAHAHAHAHAHAHAHAHAHHAHAHAHAHAHHAHAHHAHAHAHAHHAHAHAHAHHAHAHAHAHAHHAHAHAHAHAH
         if (NextScene == 1)
         {
-            Debug.WriteLine("Border");
+            Debug.WriteLine("Hi");
+            changeBorder();
+            ConsoleManager.Update();
         }
         else if (NextScene == 2)
         {
@@ -42,5 +44,24 @@ public class Options
         }
         
 
+    }
+    public void changeBorder()
+    {
+        //save fil som den tar current border ifrån (som en integer border[0] skulle va 0 t.ex), tar nästa i stringen
+        string border = "■▒i";
+        for (int X = 0; X < ConsoleManager.maxX; X++)
+        {
+            for (int Y = 0; Y < ConsoleManager.maxY; Y++)
+            {
+                if (X == 0 || Y == 0 || X+1 == ConsoleManager.maxX || Y+1 == ConsoleManager.maxY)
+                {
+                    ConsoleManager.Grid[new Vector2(X,Y)] = "▒";    
+                }
+            }
+        }
+    }
+    public void ChangeResolution()
+    {
+        string border = "■▒i";
     }
 }
