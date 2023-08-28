@@ -2,9 +2,7 @@
 //▒ ser ut som bricks typ ■ pixel nästan? □, https://en.wikipedia.org/wiki/Geometric_Shapes_(Unicode_block)
 
 using System.Numerics;
-using System.Threading.Tasks.Dataflow;
-
-public static class Console1
+public static class ConsoleManager
 {
     //ändra 1920, 1080 till en sak som faktiskt fungerar på alla skärmar
     static float rowtopixelWidth = 1920 / Console.LargestWindowWidth;
@@ -12,6 +10,7 @@ public static class Console1
     public static Dictionary<Vector2, string> Grid = new();
     private static int maxY = 0;
     private static int maxX = 0;
+    public static string currentScreen = "Console";
     public static void InitConsole()
     {
         //console använder rows, columns istället för pixlar därför behöver converta, pixelwidth/height inte perfekt men fungerar typ
@@ -72,6 +71,11 @@ public static class Console1
         string[] textSplit = Text.Split("|");
         Vector2 text1vector = new Vector2(int.Parse(textSplit[1]), int.Parse(textSplit[2]));  
         return (textSplit[0], text1vector);
+    }
+    public static void changeBorder()
+    {
+        //save fil som den tar current border ifrån tar nästa
+        string border = "■▒i";
     }
 
 }

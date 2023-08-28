@@ -6,8 +6,8 @@ class Program1
 {
     static void Main()
     {
-        Console1.InitConsole();
-        Console1.Update();
+        ConsoleManager.InitConsole();
+        ConsoleManager.Update();
         Scene test = new();
         Menu init = new();
         init.initMenu();

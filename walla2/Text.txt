@@ -2,3 +2,8 @@ Text | X | Y
 Hej|33|3
 Start|33|10
 Settings|33|15
+
+--Options--
+Border Theme|33|10
+Resolution|33|15
+Exit|33|20
