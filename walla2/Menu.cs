@@ -5,6 +5,7 @@ using System.Security.Principal;
 using System.Numerics;
 using System.Diagnostics;
 using System.Runtime.Intrinsics.Arm;
+using System.Runtime.CompilerServices;
 // Menu.cs ska ta text från text.txt seperata de från |, skicka till console1.cs med en funktion som tar texten och vector2, tar längden av stringen sen cuttar den i helften och tar kordinaterna - det för att senare börja därifrån
 
 public class Menu
@@ -25,34 +26,23 @@ public class Menu
 
 
         ConsoleManager.Update();
-        //fixa detta senare
-        int selectedOption = 1;
-        while (Console.ReadKey().Key == ConsoleKey.DownArrow && ConsoleManager.currentScreen == "Menu") 
-        {
-            if (selectedOption == 1)
-            {
-                selectedOption ++;
-                Debug.WriteLine(selectedOption);
-            }
-            else{
-                selectedOption --;
-                Debug.WriteLine(selectedOption);
-            }
-        }
-        while (Console.ReadKey().Key == ConsoleKey.C && ConsoleManager.currentScreen == "Menu") 
-        {
-            if (selectedOption == 1)
-            {
-                selectedOption ++;
-                Debug.WriteLine(selectedOption);
-            }
-            else{
-                Debug.WriteLine(selectedOption);
-                Options optionsinit = new();
-                optionsinit.initOptions();
-            }
-        }
+        List<int> Options = new();
+        //ska fixa senare
+        Options.Add(0);
+        Options.Add(1);
+        TempHighlightText test1 = new();
 
+        int NextScene = test1.TextSelection("True", Options, "True");
+        if (NextScene == 1)
+        {
+            Debug.WriteLine("GameBroken");
+        }
+        else
+        {
+            Options optionsinit = new();
+            optionsinit.initOptions();
+        }
+        
 
     }
 }

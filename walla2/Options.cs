@@ -19,39 +19,28 @@ public class Options
 
 
         ConsoleManager.Update();
-        int selectedOption = 1;
-        while (Console.ReadKey().Key == ConsoleKey.DownArrow) 
+        List<int> Options = new();
+        //ska fixa senare
+        Options.Add(0);
+        Options.Add(1);
+        Options.Add(2);
+        TempHighlightText test1 = new();
+
+        int NextScene =test1.TextSelection("True", Options, "False");
+        //Måste ändå fixa detta senare ksk en class som e hardcoded skulle iallafall se snyggare ut och va hardcoded i båda fallen HAHAHAHAHAHAHAHAHAHAHAHAHAHHAHAHAHAHAHAHAHAHAHHAHAHHAHAHAHAHAHHAHAHAHAHAHAHHAHAHAHAHAHAHAHHAHAHAHAHAHAHAHAHAHAHHAHAHAHAHAHHAHAHHAHAHAHAHHAHAHAHAHHAHAHAHAHAHHAHAHAHAHAH
+        if (NextScene == 1)
         {
-            if (selectedOption == 1)
-            {
-                selectedOption ++;
-            }
-            else{
-                selectedOption --;
-            }
+            Debug.WriteLine("Border");
         }
-        while (Console.ReadKey().Key == ConsoleKey.UpArrow) 
+        else if (NextScene == 2)
         {
-            if (selectedOption == 3)
-            {
-                selectedOption --;
-            }
-            else{
-                selectedOption ++;
-            }
+            Debug.WriteLine("Resolution");
         }
-        while (Console.ReadKey().Key == ConsoleKey.Enter) 
+        else if (NextScene == 3)
         {
-            if (selectedOption == 1)
-            {
-                selectedOption ++;
-            }
-            else
-            {
-                Options optionsinit = new();
-                optionsinit.initOptions();
-            }
+            Debug.WriteLine("Exit");
         }
+        
 
     }
 }

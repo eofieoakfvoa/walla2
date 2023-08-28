@@ -17,15 +17,15 @@ public static class ConsoleManager
         int windowsPixelWidth = 512;
         //--för någon anledning är max 1071 på en 1080 skärm?,,,,, 512 / 400
         int windowsPixelHeight = 400;
-        int windowsWidth = (int)MathF.Floor(windowsPixelWidth/rowtopixelWidth);
-        int windowsHeight = (int)MathF.Floor(windowsPixelHeight/rowtopixelHeight);
+        int windowsWidth = (int)MathF.Floor(windowsPixelWidth / rowtopixelWidth);
+        int windowsHeight = (int)MathF.Floor(windowsPixelHeight / rowtopixelHeight);
         Console.SetWindowSize(windowsWidth, windowsHeight);
         //skapar en grid där allting är tomt by default.
         for (int x = 0; x < windowsWidth; x++)
         {
             for (int y = 0; y < windowsHeight; y++)
             {
-                Vector2 test = new Vector2(x,y);
+                Vector2 test = new Vector2(x, y);
                 Grid.Add(test, " ");
                 maxY = y;
             }
@@ -44,21 +44,21 @@ public static class ConsoleManager
             for (int x = 0; x < maxX; x++)
             {
 
-                Line = Line + Grid[new Vector2(x,Y)];
-                
-            } 
-        //refresh
-        File.AppendAllText(@"Screen.txt", Line + Environment.NewLine);
+                Line = Line + Grid[new Vector2(x, Y)];
+
+            }
+            //refresh
+            File.AppendAllText(@"Screen.txt", Line + Environment.NewLine);
         }
         string[] textFromFile = File.ReadAllLines(@"Screen.txt");
         foreach (string line in textFromFile)
         {
-        Console.WriteLine(line);
-        }       
+            Console.WriteLine(line);
+        }
     }
     public static void AddText(string Text, Vector2 Position)
     {
-        Position.X = Position.X - Text.Length/2;
+        Position.X = Position.X - Text.Length / 2;
         for (int i = 0; i < Text.Length; i++)
         {
             string letter = Text[i].ToString();
@@ -69,7 +69,7 @@ public static class ConsoleManager
     {
         string Text = File.ReadLines(@"text.txt").ElementAtOrDefault(Location);
         string[] textSplit = Text.Split("|");
-        Vector2 text1vector = new Vector2(int.Parse(textSplit[1]), int.Parse(textSplit[2]));  
+        Vector2 text1vector = new Vector2(int.Parse(textSplit[1]), int.Parse(textSplit[2]));
         return (textSplit[0], text1vector);
     }
     public static void changeBorder()
