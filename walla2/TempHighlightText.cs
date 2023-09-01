@@ -5,11 +5,19 @@ public class TempHighlightText
     List<int> Options = new();
     
     int selectedOption = 1;
+    public string getKey()
+    {
+        string temp = Console.ReadLine();
+        return temp;
+    }
     public int TextSelection(string Active, List<int> Options, String ClickAble)
     {
         bool Update = true;
         while (Active == "True")
-        {
+        {   
+        
+        ConsoleKeyInfo d = Console.ReadKey();
+        System.Console.WriteLine(d.Key.ToString());
         while (Console.ReadKey().Key == ConsoleKey.DownArrow) 
         {
             if (selectedOption == 1)

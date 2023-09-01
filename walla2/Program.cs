@@ -12,5 +12,7 @@ class Program1
         Menu init = new();
         init.initMenu();
         Console.ReadLine();
+
+        ConsoleManager.Width = 9000;
     }
 }

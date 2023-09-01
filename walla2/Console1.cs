@@ -1,7 +1,10 @@
 //gör så den ritar ut från en dictionary ksk så att key vector2 t.ex 1,2 ska va ett i, kanske gör det lättare i framtiden?
 //▒ ser ut som bricks typ ■ pixel nästan? □, https://en.wikipedia.org/wiki/Geometric_Shapes_(Unicode_block)
 
+using System.Diagnostics;
+using System.Diagnostics.Tracing;
 using System.Numerics;
+
 public static class ConsoleManager
 {
     //ändra 1920, 1080 till en sak som faktiskt fungerar på alla skärmar
@@ -11,6 +14,25 @@ public static class ConsoleManager
     public static int maxY = 0;
     public static int maxX = 0;
     public static string currentScreen = "Console";
+    
+
+
+    public static int Width
+    {
+        get
+        {
+            return Console.WindowWidth;
+        }
+        set
+        {
+            if (value < maxX)
+            {
+
+                Console.WindowWidth = value;
+            }
+        }
+    }
+
     public static void InitConsole()
     {
         //console använder rows, columns istället för pixlar därför behöver converta, pixelwidth/height inte perfekt men fungerar typ
@@ -45,6 +67,10 @@ public static class ConsoleManager
             {
 
                 Line = Line + Grid[new Vector2(x, Y)];
+                if (x == maxX - 1)
+                {
+                    Line = Line + " n";
+                }
 
             }
             //refresh
