@@ -5,9 +5,9 @@ public class TempHighlightText
     List<int> Options = new();
     
     int selectedOption = 1;
-    public string getKey()
+    public ConsoleKeyInfo getKey()
     {
-        string temp = Console.ReadLine();
+        ConsoleKeyInfo temp = Console.ReadKey();
         return temp;
     }
     public int TextSelection(string Active, List<int> Options, String ClickAble)
@@ -15,10 +15,8 @@ public class TempHighlightText
         bool Update = true;
         while (Active == "True")
         {   
-        
-        ConsoleKeyInfo d = Console.ReadKey();
-        System.Console.WriteLine(d.Key.ToString());
-        while (Console.ReadKey().Key == ConsoleKey.DownArrow) 
+        ConsoleKeyInfo temp = getKey();
+        if (temp.Key == ConsoleKey.DownArrow) 
         {
             if (selectedOption == 1)
             {
@@ -35,7 +33,7 @@ public class TempHighlightText
             //         return selectedOption;
             // }
         }
-        while (Console.ReadKey().Key == ConsoleKey.UpArrow) 
+        if (temp.Key == ConsoleKey.UpArrow) 
         {
             if (selectedOption == Options.Count)
             {
@@ -51,7 +49,7 @@ public class TempHighlightText
             //         return selectedOption;
             // }
         }
-        while (Console.ReadKey().Key == ConsoleKey.C) 
+        if (temp.Key == ConsoleKey.C) 
         {
             // if (ClickAble == "True")
             // {
