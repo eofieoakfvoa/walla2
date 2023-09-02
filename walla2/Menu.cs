@@ -32,7 +32,7 @@ public class Menu
         Options.Add(1);
         TempHighlightText test1 = new();
 
-        int NextScene = test1.TextSelection("True", Options, "True");
+        int NextScene = test1.MenuSelection("True", Options, "True");
         if (NextScene == 1)
         {
             Debug.WriteLine("GameBroken");

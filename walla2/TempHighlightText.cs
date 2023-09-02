@@ -3,64 +3,57 @@ using System.Diagnostics;
 public class TempHighlightText
 {
     List<int> Options = new();
-    
+
     int selectedOption = 1;
-    public ConsoleKeyInfo getKey()
+    protected ConsoleKeyInfo getKey()
     {
         ConsoleKeyInfo temp = Console.ReadKey();
         return temp;
     }
-    public int TextSelection(string Active, List<int> Options, String ClickAble)
+    public int MenuSelection(string Active, List<int> Options, String ClickAble)
     {
-        bool Update = true;
         while (Active == "True")
-        {   
-        ConsoleKeyInfo temp = getKey();
-        if (temp.Key == ConsoleKey.DownArrow) 
         {
-            if (selectedOption == 1)
+            //Får en list av knappar där den kollar ifall någon av knapparna är klickade sen så skickar den tillbaka?,
+            //försöka komma på något sätt för att inte hardcoda in menyer?
+            ConsoleKeyInfo key = getKey();
+            if (key.Key == ConsoleKey.DownArrow)
             {
-                selectedOption = Options.Count;
-                Debug.WriteLine(selectedOption);
+                if (selectedOption == 1)
+                {
+                    selectedOption = Options.Count;
+                    Debug.WriteLine(selectedOption);
+                }
+                else
+                {
+                    selectedOption--;
+                    Debug.WriteLine(selectedOption);
+                }
+
             }
-            else{
-                selectedOption --;
-                Debug.WriteLine(selectedOption);
-            }
-            //Fixa så att t.ex border themes behöver man bara klicka på höger och vänster pilen på att ändra inte klicka på enter knappen först sen pilar
-            // if (ClickAble == "False")
-            // {
-            //         return selectedOption;
-            // }
-        }
-        if (temp.Key == ConsoleKey.UpArrow) 
-        {
-            if (selectedOption == Options.Count)
+            if (key.Key == ConsoleKey.UpArrow)
             {
-                selectedOption = 1;
-                Debug.WriteLine(selectedOption);
+                if (selectedOption == Options.Count)
+                {
+                    selectedOption = 1;
+                    Debug.WriteLine(selectedOption);
+                }
+                else
+                {
+                    selectedOption++;
+                    Debug.WriteLine(selectedOption);
+                }
             }
-            else{
-                selectedOption ++;
-                Debug.WriteLine(selectedOption);
-            }
-            // if (ClickAble == "False")
-            // {
-            //         return selectedOption;
-            // }
-        }
-        if (temp.Key == ConsoleKey.C) 
-        {
-            // if (ClickAble == "True")
-            // {
+            if (key.Key == ConsoleKey.C)
+            {
                 Active = "False";
                 ClickAble = string.Empty;
                 return selectedOption;
-            // }
+            }
         }
-        }
-    return 0; // borde aldrig hända?
+        return 0;
     }
+
     //Up Down funktion som ändrar Selectedoption??
     //Left to right funktion 
 }

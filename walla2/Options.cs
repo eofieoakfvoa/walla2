@@ -26,7 +26,7 @@ public class Options
         Options.Add(2);
         TempHighlightText test1 = new();
 
-        int NextScene =test1.TextSelection("True", Options, "False");
+        int NextScene =test1.MenuSelection("True", Options, "False");
         //Måste ändå fixa detta senare ksk en class som e hardcoded skulle iallafall se snyggare ut och va hardcoded i båda fallen HAHAHAHAHAHAHAHAHAHAHAHAHAHHAHAHAHAHAHAHAHAHAHHAHAHHAHAHAHAHAHHAHAHAHAHAHAHHAHAHAHAHAHAHAHHAHAHAHAHAHAHAHAHAHAHHAHAHAHAHAHHAHAHHAHAHAHAHHAHAHAHAHHAHAHAHAHAHHAHAHAHAHAH
         if (NextScene == 1)
         {
