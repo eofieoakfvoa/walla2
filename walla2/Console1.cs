@@ -16,8 +16,6 @@ public static class ConsoleManager
     public static int maxY = 0;
     public static int maxX = 0;
     public static string currentScreen = "Console";
-    
-
 
 
     public static void InitConsole()
@@ -48,15 +46,16 @@ public static class ConsoleManager
         File.WriteAllText(@"Screen.txt", string.Empty);
         Console.Clear();
         //draw
-        for (int Y = 0; Y < maxY; Y++)
+        for (int y = 0; y < maxY; y++)
         {
             string Line = string.Empty;
             for (int x = 0; x < maxX; x++)
             {
 
-                Line = Line + Grid[new Vector2(x, Y)];
+                Line += Grid[new Vector2(x, y)];
                 if (x == maxX - 1)
                 {
+                    //det här är viktig info
                     Line = Line;
                 }
 
@@ -72,30 +71,52 @@ public static class ConsoleManager
         }
         
     }
-    public static void AddText(string Text, Vector2 Position)
+
+
+    //-------------------------------------------------------------------------------------------------------------//    
+    //-------------------------------------------------==Drawing==-------------------------------------------------//
+    //-------------------------------------------------------------------------------------------------------------//
+
+
+    //------------=text=------------//    
+    private static void renderText(string Text, Vector2 Position)
     {
-        Position.X = Position.X - Text.Length / 2;
+        Position.X -= Text.Length / 2;
+
         for (int i = 0; i < Text.Length; i++)
         {
             string letter = Text[i].ToString();
             Grid[new Vector2(Position.X + i, Position.Y)] = letter;
         }
+
     }
-    public static (string, Vector2) LoadText(int Location)
+
+    private static (string, Vector2) LoadText(int Location)
     {
         string Text = File.ReadLines(@"text.txt").ElementAtOrDefault(Location);
         string[] textSplit = Text.Split("|");
-        Vector2 text1vector = new Vector2(int.Parse(textSplit[1]), int.Parse(textSplit[2]));
+        Vector2 text1vector = new(int.Parse(textSplit[1]), int.Parse(textSplit[2]));
         return (textSplit[0], text1vector);
     }
+
+    public static void addText(int textLine)
+    {
+        (string text, Vector2 location) = LoadText(textLine);
+        renderText(text, location);
+    }
+
+    //------------=sprite=------------//    
+    
     public static void renderSprite(int start, int end, int xOffset, int yOffset)
     {
         List<string> sprite = new();
-        for (int i = start-1; i <= end; i++)
+        
+        for (int i = start; i <= end; i++)
         {
             string Text = File.ReadLines(@"sprite.txt").ElementAtOrDefault(i);
             sprite.Add(Text);
         }
+
         foreach (string line in sprite)
         {
             

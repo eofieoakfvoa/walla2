@@ -8,13 +8,8 @@ public class Tamagotchi
     private bool isAlive;
     private List<string> knownWords = new();
     private List<int> happySprite = new List<int>{ 1, 12 }; 
-    private List<int> sadSprite = new List<int>{ 13, 25 }; 
+    private List<int> sadSprite = new List<int>{ 13, 24 }; 
     
-    public void tamagotchiManager()
-    {
-    ConsoleManager.renderSprite(happySprite[0], happySprite[1], 10, 10);
-    ConsoleManager.Update();  
-    }
     public void Play()
     {
 

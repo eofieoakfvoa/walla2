@@ -16,13 +16,11 @@ public class Menu
         Scene test = new();
         test.ChangeScene<MenuColors>(); 
         ConsoleManager.currentScreen = "Menu";
-        //kanske göra så att loadtext() gör addtext() automatiskt så blir coden mindre?
-        (string text, Vector2 location) = ConsoleManager.LoadText(1);
-        (string text2, Vector2 location2) = ConsoleManager.LoadText(2);
-        (string text3, Vector2 location3) = ConsoleManager.LoadText(3);
-        ConsoleManager.AddText(text, location);
-        ConsoleManager.AddText(text2, location2);
-        ConsoleManager.AddText(text3, location3);
+
+        ConsoleManager.addText(1);
+        ConsoleManager.addText(2);
+        ConsoleManager.addText(3);
+
 
 
         ConsoleManager.Update();
@@ -35,8 +33,8 @@ public class Menu
         int NextScene = test1.MenuSelection("True", Options, "True");
         if (NextScene == 1)
         {
-            Tamagotchi tama = new();
-            tama.tamagotchiManager();
+            tamagotchiManager tama = new();
+            tama.initTamagochiScene();
 
         }
         else

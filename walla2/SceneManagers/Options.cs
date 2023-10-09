@@ -11,14 +11,10 @@ public class Options
         Scene test = new();
         test.ChangeScene<MenuColors>(); 
         ConsoleManager.currentScreen = "Options";
-        (string text, Vector2 location) = ConsoleManager.LoadText(1);
-        (string text2, Vector2 location2) = ConsoleManager.LoadText(6);
-        (string text3, Vector2 location3) = ConsoleManager.LoadText(7);
-        (string text4, Vector2 location4) = ConsoleManager.LoadText(8);
-        ConsoleManager.AddText(text, location);
-        ConsoleManager.AddText(text2, location2);
-        ConsoleManager.AddText(text3, location3);
-        ConsoleManager.AddText(text4, location4);
+        ConsoleManager.addText(1);
+        ConsoleManager.addText(6);
+        ConsoleManager.addText(7);
+        ConsoleManager.addText(8);
 
 
         ConsoleManager.Update();
@@ -55,14 +51,17 @@ public class Options
         //save fil som den tar current border ifrån (som en integer border[0] skulle va 0 t.ex), tar nästa i stringen
         int Index = CurrentBorder + Selection;
         string border = "■▒i"; 
+        
         if (Index < 0)
         {
         Index = border.Length-1;
         }
+        
         if (Index > border.Length-1)
         {
         Index = 0;
         }
+
         Debug.WriteLine(Index);
         for (int X = 0; X < ConsoleManager.maxX; X++)
         {
@@ -78,7 +77,7 @@ public class Options
     }
     public void ChangeResolution()
     {
-        string border = "■▒i";
+
     }
     
 }
