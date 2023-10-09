@@ -35,7 +35,9 @@ public class Menu
         int NextScene = test1.MenuSelection("True", Options, "True");
         if (NextScene == 1)
         {
-            Debug.WriteLine("GameBroken");
+            Tamagotchi tama = new();
+            tama.tamagotchiManager();
+
         }
         else
         {

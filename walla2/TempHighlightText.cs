@@ -10,6 +10,30 @@ public class TempHighlightText
         ConsoleKeyInfo temp = Console.ReadKey();
         return temp;
     }
+    public int OptionSelection(string Active)
+    {
+        while (Active == "True")
+        {
+            //Får en list av knappar där den kollar ifall någon av knapparna är klickade sen så skickar den tillbaka?,
+            //försöka komma på något sätt för att inte hardcoda in menyer?
+            ConsoleKeyInfo key = getKey();
+            Debug.WriteLine("hi");
+            if (key.Key == ConsoleKey.RightArrow)
+            {
+                    return 1;
+
+            }
+            if (key.Key == ConsoleKey.LeftArrow)
+            {
+                    return -1;
+            }
+        }
+            Debug.WriteLine("hi2");
+        return 0;
+    }
+
+    //Up Down funktion som ändrar Selectedoption??
+    //Left to right funktion 
     public int MenuSelection(string Active, List<int> Options, String ClickAble)
     {
         while (Active == "True")
@@ -53,7 +77,4 @@ public class TempHighlightText
         }
         return 0;
     }
-
-    //Up Down funktion som ändrar Selectedoption??
-    //Left to right funktion 
 }

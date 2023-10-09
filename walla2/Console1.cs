@@ -4,6 +4,8 @@
 using System.Diagnostics;
 using System.Diagnostics.Tracing;
 using System.Numerics;
+using System.Runtime.CompilerServices;
+using System.Security.Cryptography.X509Certificates;
 
 public static class ConsoleManager
 {
@@ -17,21 +19,6 @@ public static class ConsoleManager
     
 
 
-    public static int Width
-    {
-        get
-        {
-            return Console.WindowWidth;
-        }
-        set
-        {
-            if (value < maxX)
-            {
-
-                Console.WindowWidth = value;
-            }
-        }
-    }
 
     public static void InitConsole()
     {
@@ -55,6 +42,7 @@ public static class ConsoleManager
         }
 
     }
+
     public static void Update()
     {
         File.WriteAllText(@"Screen.txt", string.Empty);
@@ -69,7 +57,7 @@ public static class ConsoleManager
                 Line = Line + Grid[new Vector2(x, Y)];
                 if (x == maxX - 1)
                 {
-                    Line = Line + " n";
+                    Line = Line;
                 }
 
             }
@@ -79,8 +67,10 @@ public static class ConsoleManager
         string[] textFromFile = File.ReadAllLines(@"Screen.txt");
         foreach (string line in textFromFile)
         {
-            Console.WriteLine(line);
+
+            Console.Write(line + "\n");
         }
+        
     }
     public static void AddText(string Text, Vector2 Position)
     {
@@ -98,6 +88,24 @@ public static class ConsoleManager
         Vector2 text1vector = new Vector2(int.Parse(textSplit[1]), int.Parse(textSplit[2]));
         return (textSplit[0], text1vector);
     }
-
+    public static void renderSprite(int start, int end, int xOffset, int yOffset)
+    {
+        List<string> sprite = new();
+        for (int i = start-1; i <= end; i++)
+        {
+            string Text = File.ReadLines(@"sprite.txt").ElementAtOrDefault(i);
+            sprite.Add(Text);
+        }
+        foreach (string line in sprite)
+        {
+            
+            for (int i = 0; i < line.Length; i++)
+            {
+                string letter = line[i].ToString();
+                Grid[new Vector2(xOffset + i, yOffset)] = letter;
+            }
+            yOffset++;
+        }
+    }
 
 }

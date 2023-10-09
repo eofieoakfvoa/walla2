@@ -4,7 +4,7 @@ using System.Runtime.InteropServices;
 
 class Program1
 {
-    static void Main()
+    static void Main(string[] args)
     {
         ConsoleManager.InitConsole();
         ConsoleManager.Update();
@@ -13,6 +13,5 @@ class Program1
         init.initMenu();
         Console.ReadLine();
 
-        ConsoleManager.Width = 9000;
     }
 }

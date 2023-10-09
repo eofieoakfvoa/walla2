@@ -7,3 +7,5 @@ Settings|33|15
 Border Theme|33|10
 Resolution|33|15
 Exit|33|20
+
+Tamagotchi--
