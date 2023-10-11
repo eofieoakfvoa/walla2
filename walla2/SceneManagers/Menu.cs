@@ -12,7 +12,6 @@ public class Menu
 {
     public void initMenu()
     {
-        ConsoleManager.hardClear();
         Scene test = new();
         test.ChangeScene<MenuColors>(); 
         ConsoleManager.currentScreen = "Menu";

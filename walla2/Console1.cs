@@ -17,7 +17,19 @@ public static class ConsoleManager
     public static Dictionary<Vector2, string> Grid = new();
     public static int maxY = 0;
     public static int maxX = 0;
-    public static string currentScreen = "Console";
+    private static string _currentScreen = "Console";
+    public static string currentScreen
+    {
+        get
+        {
+            return _currentScreen;
+        }
+        set
+        {
+            _currentScreen=value;
+            hardClear();
+        }
+    }
 
 
     public static void InitConsole()

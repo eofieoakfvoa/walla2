@@ -7,11 +7,9 @@ public class Options
     public int CurrentBorder = 1;
     public void initOptions()
     {
-        ConsoleManager.hardClear();
         Scene test = new();
         test.ChangeScene<MenuColors>(); 
         ConsoleManager.currentScreen = "Options";
-        ConsoleManager.addText(1, new string[]{"Left", "Center"});
         ConsoleManager.addText(6, new string[]{"Center", "Center"});
         ConsoleManager.addText(7, new string[]{"Center", "Center"});
         ConsoleManager.addText(8, new string[]{"Center", "Center"});
@@ -52,7 +50,7 @@ public class Options
     {
         //save fil som den tar current border ifrån (som en integer border[0] skulle va 0 t.ex), tar nästa i stringen
         int Index = CurrentBorder + Selection;
-        string border = "■▒i"; 
+        string border = "■▒i█"; 
         
         if (Index < 0)
         {

@@ -8,7 +8,6 @@ public class tamagotchiManager
     
     public void initTamagochiScene()
     {
-        ConsoleManager.hardClear();
         ConsoleManager.currentScreen = "Tamagochi";
         ConsoleManager.renderSprite(happySprite[0], happySprite[1], 10, 10);
         ConsoleManager.Update();  
