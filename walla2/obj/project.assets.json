@@ -8,31 +8,24 @@
     "net7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\richard.nilsson\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\troll\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\richard.nilsson\\New folder\\walla2\\walla2\\walla2\\walla2.csproj",
+      "projectUniqueName": "C:\\Users\\troll\\skolArbete\\walla2\\walla2\\walla2.csproj",
       "projectName": "walla2",
-      "projectPath": "c:\\Users\\richard.nilsson\\New folder\\walla2\\walla2\\walla2\\walla2.csproj",
-      "packagesPath": "C:\\Users\\richard.nilsson\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\richard.nilsson\\New folder\\walla2\\walla2\\walla2\\obj\\",
+      "projectPath": "C:\\Users\\troll\\skolArbete\\walla2\\walla2\\walla2.csproj",
+      "packagesPath": "C:\\Users\\troll\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\troll\\skolArbete\\walla2\\walla2\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\richard.nilsson\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\troll\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -66,7 +59,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.104\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }
