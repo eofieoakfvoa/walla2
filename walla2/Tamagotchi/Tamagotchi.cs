@@ -22,5 +22,8 @@ public class Tamagotchi
     {
 
     }
-    
+    public void Tick()
+    {
+        
+    }
 }

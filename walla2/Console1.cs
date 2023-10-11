@@ -1,11 +1,13 @@
 //gör så den ritar ut från en dictionary ksk så att key vector2 t.ex 1,2 ska va ett i, kanske gör det lättare i framtiden?
 //▒ ser ut som bricks typ ■ pixel nästan? □, https://en.wikipedia.org/wiki/Geometric_Shapes_(Unicode_block)
 
+using System.Collections.Specialized;
 using System.Diagnostics;
 using System.Diagnostics.Tracing;
 using System.Numerics;
 using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
+using System.Xml.Schema;
 
 public static class ConsoleManager
 {
@@ -23,6 +25,7 @@ public static class ConsoleManager
         //console använder rows, columns istället för pixlar därför behöver converta, pixelwidth/height inte perfekt men fungerar typ
         int windowsPixelWidth = 512;
         //--för någon anledning är max 1071 på en 1080 skärm?,,,,, 512 / 400
+        // ifall man har 2+ skärmar tror den att resolutionen är bådas, lite knasigt
         int windowsPixelHeight = 400;
         int windowsWidth = (int)MathF.Floor(windowsPixelWidth / rowtopixelWidth);
         int windowsHeight = (int)MathF.Floor(windowsPixelHeight / rowtopixelHeight);
@@ -40,7 +43,17 @@ public static class ConsoleManager
         }
 
     }
-
+    public static void hardClear()
+    {
+        for (int x = 0; x < maxX; x++)
+        {
+            for (int y = 0; y < maxY; y++)
+            {
+                Vector2 test = new Vector2(x, y);
+                Grid[test] = " ";
+            }
+        }
+    }
     public static void Update()
     {
         File.WriteAllText(@"Screen.txt", string.Empty);
@@ -55,8 +68,8 @@ public static class ConsoleManager
                 Line += Grid[new Vector2(x, y)];
                 if (x == maxX - 1)
                 {
-                    //det här är viktig info
                     Line = Line;
+                    //det här är viktig info
                 }
 
             }
@@ -68,6 +81,7 @@ public static class ConsoleManager
         {
 
             Console.Write(line + "\n");
+            //använder write istället för writeline för färger behöver ändras mitt i bilden, och de är beroende av texten
         }
         
     }
@@ -99,9 +113,10 @@ public static class ConsoleManager
         return (textSplit[0], text1vector);
     }
 
-    public static void addText(int textLine)
+    public static void addText(int textLine, string[] pivot)
     {
         (string text, Vector2 location) = LoadText(textLine);
+        location = AddPivot(pivot, location);
         renderText(text, location);
     }
 
@@ -128,5 +143,27 @@ public static class ConsoleManager
             yOffset++;
         }
     }
-
+    //-------=något=-----//
+    public static Vector2 AddPivot(string[] locations, Vector2 Offset)
+    {
+    int x = maxX/2;
+    int y = maxY/2;
+    
+        foreach (string location in locations)
+        {
+            if (location == "Left")
+                x = 2; // +1 för att den längst till vänster ska existera +1 för border
+            else if (location == "Right")
+                x = maxX;
+            else if (location == "Top")
+                y = 0;
+            else if (location == "Bottom")
+                y = maxY;
+        }
+    
+    Vector2 Pivot = new Vector2(x,y);
+    Pivot = Vector2.Add(Pivot, Offset);
+    return Pivot;
+    
+    }
 }

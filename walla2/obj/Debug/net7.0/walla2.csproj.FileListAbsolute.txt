@@ -13,3 +13,17 @@ C:\Users\richard.nilsson\New folder\walla2\walla2\walla2\obj\Debug\net7.0\refint
 C:\Users\richard.nilsson\New folder\walla2\walla2\walla2\obj\Debug\net7.0\walla2.pdb
 C:\Users\richard.nilsson\New folder\walla2\walla2\walla2\obj\Debug\net7.0\walla2.genruntimeconfig.cache
 C:\Users\richard.nilsson\New folder\walla2\walla2\walla2\obj\Debug\net7.0\ref\walla2.dll
+C:\Users\troll\skolArbete\walla2\walla2\bin\Debug\net7.0\walla2.exe
+C:\Users\troll\skolArbete\walla2\walla2\bin\Debug\net7.0\walla2.deps.json
+C:\Users\troll\skolArbete\walla2\walla2\bin\Debug\net7.0\walla2.runtimeconfig.json
+C:\Users\troll\skolArbete\walla2\walla2\bin\Debug\net7.0\walla2.dll
+C:\Users\troll\skolArbete\walla2\walla2\bin\Debug\net7.0\walla2.pdb
+C:\Users\troll\skolArbete\walla2\walla2\obj\Debug\net7.0\walla2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\troll\skolArbete\walla2\walla2\obj\Debug\net7.0\walla2.AssemblyInfoInputs.cache
+C:\Users\troll\skolArbete\walla2\walla2\obj\Debug\net7.0\walla2.AssemblyInfo.cs
+C:\Users\troll\skolArbete\walla2\walla2\obj\Debug\net7.0\walla2.csproj.CoreCompileInputs.cache
+C:\Users\troll\skolArbete\walla2\walla2\obj\Debug\net7.0\walla2.dll
+C:\Users\troll\skolArbete\walla2\walla2\obj\Debug\net7.0\refint\walla2.dll
+C:\Users\troll\skolArbete\walla2\walla2\obj\Debug\net7.0\walla2.pdb
+C:\Users\troll\skolArbete\walla2\walla2\obj\Debug\net7.0\walla2.genruntimeconfig.cache
+C:\Users\troll\skolArbete\walla2\walla2\obj\Debug\net7.0\ref\walla2.dll

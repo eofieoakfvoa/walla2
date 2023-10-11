@@ -7,7 +7,7 @@ public class TempHighlightText
     int selectedOption = 1;
     protected ConsoleKeyInfo getKey()
     {
-        ConsoleKeyInfo temp = Console.ReadKey();
+        ConsoleKeyInfo temp = Console.ReadKey(true); //true gör så det man skriver inte kommer i consolen
         return temp;
     }
     public int OptionSelection(string Active)

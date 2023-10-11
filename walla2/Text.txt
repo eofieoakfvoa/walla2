@@ -1,11 +1,11 @@
 Text | X | Y
-Hej|33|3
-Start|33|10
-Settings|33|15
+Hej|0|3
+Start|0|5
+Settings|0|9
 
 --Options--
-Border Theme|33|10
-Resolution|33|15
-Exit|33|20
+Border Theme|0|-5
+Resolution|0|5
+Exit|0|9
 
 Tamagotchi--

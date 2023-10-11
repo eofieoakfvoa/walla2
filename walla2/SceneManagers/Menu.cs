@@ -12,14 +12,14 @@ public class Menu
 {
     public void initMenu()
     {
-
+        ConsoleManager.hardClear();
         Scene test = new();
         test.ChangeScene<MenuColors>(); 
         ConsoleManager.currentScreen = "Menu";
 
-        ConsoleManager.addText(1);
-        ConsoleManager.addText(2);
-        ConsoleManager.addText(3);
+        ConsoleManager.addText(1, new string[]{"Center", "Center"});
+        ConsoleManager.addText(2, new string[]{"Center", "Center"});
+        ConsoleManager.addText(3, new string[]{"Center", "Center"});
 
 
 

@@ -7,22 +7,24 @@ public class Options
     public int CurrentBorder = 1;
     public void initOptions()
     {
-
+        ConsoleManager.hardClear();
         Scene test = new();
         test.ChangeScene<MenuColors>(); 
         ConsoleManager.currentScreen = "Options";
-        ConsoleManager.addText(1);
-        ConsoleManager.addText(6);
-        ConsoleManager.addText(7);
-        ConsoleManager.addText(8);
+        ConsoleManager.addText(1, new string[]{"Left", "Center"});
+        ConsoleManager.addText(6, new string[]{"Center", "Center"});
+        ConsoleManager.addText(7, new string[]{"Center", "Center"});
+        ConsoleManager.addText(8, new string[]{"Center", "Center"});
 
 
         ConsoleManager.Update();
-        List<int> Options = new();
-        //ska fixa senare
-        Options.Add(0);
-        Options.Add(1);
-        Options.Add(2);
+        List<int> Options = new()
+        {
+            //ska fixa senare
+            0,
+            1,
+            2
+        };
         TempHighlightText test1 = new();
 
         int NextScene =test1.MenuSelection("True", Options, "False");
