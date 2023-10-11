@@ -121,6 +121,7 @@ public static class ConsoleManager
     {
         string Text = File.ReadLines(@"text.txt").ElementAtOrDefault(Location);
         string[] textSplit = Text.Split("|");
+        Debug.WriteLine(textSplit);
         Vector2 text1vector = new(int.Parse(textSplit[1]), int.Parse(textSplit[2]));
         return (textSplit[0], text1vector);
     }

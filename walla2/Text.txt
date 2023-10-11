@@ -9,3 +9,8 @@ Resolution|0|0
 Exit|0|3
 
 Tamagotchi--
+Play|-10|5
+Feed|0|5
+Teach|10|5
+Murder|20|5
+Text|0|0
