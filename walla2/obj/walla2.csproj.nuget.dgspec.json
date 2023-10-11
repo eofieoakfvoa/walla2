@@ -1,25 +1,31 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\troll\\skolArbete\\walla2\\walla2\\walla2.csproj": {}
+    "C:\\Users\\richard.nilsson\\Desktop\\Walla2\\walla2\\walla2\\walla2.csproj": {}
   },
   "projects": {
-    "C:\\Users\\troll\\skolArbete\\walla2\\walla2\\walla2.csproj": {
+    "C:\\Users\\richard.nilsson\\Desktop\\Walla2\\walla2\\walla2\\walla2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\troll\\skolArbete\\walla2\\walla2\\walla2.csproj",
+        "projectUniqueName": "C:\\Users\\richard.nilsson\\Desktop\\Walla2\\walla2\\walla2\\walla2.csproj",
         "projectName": "walla2",
-        "projectPath": "C:\\Users\\troll\\skolArbete\\walla2\\walla2\\walla2.csproj",
-        "packagesPath": "C:\\Users\\troll\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\troll\\skolArbete\\walla2\\walla2\\obj\\",
+        "projectPath": "C:\\Users\\richard.nilsson\\Desktop\\Walla2\\walla2\\walla2\\walla2.csproj",
+        "packagesPath": "C:\\Users\\richard.nilsson\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\richard.nilsson\\Desktop\\Walla2\\walla2\\walla2\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\troll\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\richard.nilsson\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -53,7 +59,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.104\\RuntimeIdentifierGraph.json"
         }
       }
     }
