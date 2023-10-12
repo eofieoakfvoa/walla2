@@ -18,7 +18,6 @@ public class Options
         ConsoleManager.Update();
         List<int> Options = new()
         {
-            //ska fixa senare
             0,
             1,
             2
@@ -50,7 +49,7 @@ public class Options
     {
         //save fil som den tar current border ifrån (som en integer border[0] skulle va 0 t.ex), tar nästa i stringen
         int Index = CurrentBorder + Selection;
-        string border = "■▒i█"; 
+        string border = "■▒i█▞"; 
         
         if (Index < 0)
         {

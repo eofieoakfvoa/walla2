@@ -32,8 +32,8 @@ public class Menu
         int NextScene = test1.MenuSelection("True", Options, "True");
         if (NextScene == 1)
         {
-            tamagotchiManager tama = new();
-            tama.initTamagochiScene();
+            
+            tamagotchiManager.initTamagochiScene();
 
         }
         else
