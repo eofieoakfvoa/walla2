@@ -35,15 +35,14 @@ public class Tamagotchi
     {
         Hunger--;
     }
-    public void teachWord()
+    public void teachWord(string word)
     {
-        string word;
-        string taught = "word";
-        word = taught;
+        knownWords.Add(word);
     }
     public void Tick()
     {
-        
+        Hunger++;
+        Boredom++;
     }
     public void changeSprite(List<int> sprite)
     {

@@ -26,7 +26,7 @@ public static class ConsoleManager
         }
         set
         {
-            _currentScreen=value;
+            _currentScreen = value;
             hardClear();
         }
     }
