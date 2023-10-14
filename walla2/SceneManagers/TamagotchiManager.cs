@@ -28,7 +28,7 @@ public static class tamagotchiManager
         PeriodicTimer Timer = new PeriodicTimer(TimeSpan.FromSeconds(10));
         while (await Timer.WaitForNextTickAsync())
         {
-            instancetamagotchi.Hunger ++;
+            instancetamagotchi.Tick();
         }
     }
     public static void renderSprite()

@@ -5,8 +5,16 @@ public class Tamagotchi
 {
     public string Name;
 
-    //Gör en property av Hunger och Boredom, när den är en viss mängd så ska sprite bytas, och varje ändring på hunger eller boredome ska ändra hunger och boredom bar
+    //använder _ framför namnet eftersom de är private och jag gör properties av de senare och de blir det lättare att differentiata
     private int _Hunger;
+    private int _Boredom;
+    private bool isAlive = true;
+    private List<string> knownWords = new();
+    private List<int> happySprite = new List<int>{ 1, 12 }; 
+    private List<int> sadSprite = new List<int>{ 13, 24 }; 
+    public List<int> CurrentSprite = new List<int>{ 1, 12 }; 
+
+    //Gör en property av Hunger och Boredom, när den är en viss mängd så ska sprite bytas, och varje ändring på hunger eller boredome ska ändra hunger och boredom bar
     public int Hunger
     {
         get{ return _Hunger;}
@@ -16,16 +24,28 @@ public class Tamagotchi
             if (_Hunger > 1)
             {
                 Debug.WriteLine("HEEHLP");
+                
                 changeSprite(sadSprite);
+
             }
         }
     }
-    private int Boredom;
-    private bool isAlive;
-    private List<string> knownWords = new();
-    private List<int> happySprite = new List<int>{ 1, 12 }; 
-    private List<int> sadSprite = new List<int>{ 13, 24 }; 
-    public List<int> CurrentSprite = new List<int>{ 1, 12 }; 
+
+    public int Boredom
+    {
+        get{ return _Boredom;}
+        set
+        { 
+            _Boredom = value;
+            if (_Boredom > 1)
+            {
+                
+                changeSprite(sadSprite);
+
+            }
+        }
+    }
+
 
     public void Play()
     {
@@ -35,6 +55,14 @@ public class Tamagotchi
     {
         Hunger--;
     }
+    public bool GetAlive()
+    {
+        if (_Hunger >= 10 || _Boredom >= 10)
+        {
+            isAlive = false;
+        } 
+        return isAlive;
+    }
     public void teachWord(string word)
     {
         knownWords.Add(word);
@@ -43,9 +71,17 @@ public class Tamagotchi
     {
         Hunger++;
         Boredom++;
+        if (GetAlive() == false)
+        {
+            Debug.WriteLine("Dead");
+        }
     }
     public void changeSprite(List<int> sprite)
     {
+        if (CurrentSprite == sprite)
+        {
+            return;
+        }
         CurrentSprite = sprite;
         tamagotchiManager.renderSprite();
     }

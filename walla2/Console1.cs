@@ -12,12 +12,14 @@ using System.Xml.Schema;
 public static class ConsoleManager
 {
     //ändra 1920, 1080 till en sak som faktiskt fungerar på alla skärmar
-    static float rowtopixelWidth = 1920 / Console.LargestWindowWidth;
-    static float rowtopixelHeight = 1080 / Console.LargestWindowHeight;
+    readonly static float rowtopixelWidth = 1920 / Console.LargestWindowWidth;
+    readonly static float rowtopixelHeight = 1080 / Console.LargestWindowHeight;
     public static Dictionary<Vector2, string> Grid = new();
     public static int maxY = 0;
     public static int maxX = 0;
     private static string _currentScreen = "Console";
+
+    //property för current screen så att när currentScreen ändras blir det också en hardclear på skärm canvasen 
     public static string currentScreen
     {
         get
@@ -31,7 +33,7 @@ public static class ConsoleManager
         }
     }
 
-
+    
     public static void InitConsole()
     {
         //console använder rows, columns istället för pixlar därför behöver converta, pixelwidth/height inte perfekt men fungerar typ
@@ -55,6 +57,7 @@ public static class ConsoleManager
         }
 
     }
+    //gör allt tomt dock borde jag nog ha en 1 border för att bordern ska var kvar
     public static void hardClear()
     {
         for (int x = 0; x < maxX; x++)
@@ -66,6 +69,7 @@ public static class ConsoleManager
             }
         }
     }
+    //uppdaterar det på skärmen
     public static void Update()
     {
         File.WriteAllText(@"Screen.txt", string.Empty);
@@ -76,14 +80,7 @@ public static class ConsoleManager
             string Line = string.Empty;
             for (int x = 0; x < maxX; x++)
             {
-
                 Line += Grid[new Vector2(x, y)];
-                if (x == maxX - 1)
-                {
-                    Line = Line;
-                    //det här är viktig info
-                }
-
             }
             //refresh
             File.AppendAllText(@"Screen.txt", Line + Environment.NewLine);
