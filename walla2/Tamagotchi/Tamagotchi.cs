@@ -13,7 +13,8 @@ public class Tamagotchi
     private List<int> happySprite = new List<int>{ 1, 12 }; 
     private List<int> sadSprite = new List<int>{ 13, 24 }; 
     public List<int> CurrentSprite = new List<int>{ 1, 12 }; 
-
+    public bool hasWords = false;
+    Random Generator = new();
     //Gör en property av Hunger och Boredom, när den är en viss mängd så ska sprite bytas, och varje ändring på hunger eller boredome ska ändra hunger och boredom bar
     public int Hunger
     {
@@ -54,6 +55,19 @@ public class Tamagotchi
     public void Feed()
     {
         Hunger--;
+    }
+    public string talkBack()
+    {
+        if (!hasWords)
+        {
+            if(knownWords.Count == 0)
+            {
+                return $"{Name}Knows no words";
+            }
+            hasWords = true;
+        }
+        int Index = Generator.Next(knownWords.Count);
+        return knownWords[Index];
     }
     public bool GetAlive()
     {
