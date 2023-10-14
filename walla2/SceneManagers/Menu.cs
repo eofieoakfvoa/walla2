@@ -23,10 +23,11 @@ public class Menu
 
 
         ConsoleManager.Update();
-        List<int> Options = new();
-        //ska fixa senare
-        Options.Add(0);
-        Options.Add(1);
+        List<int> Options = new()
+        {
+            0,
+            1
+        };
 
         int NextScene = InputHandler.MenuSelection("True", Options, "True");
         if (NextScene == 1)

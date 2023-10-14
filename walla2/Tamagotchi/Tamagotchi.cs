@@ -29,6 +29,10 @@ public class Tamagotchi
                 changeSprite(sadSprite);
 
             }
+            else
+            {
+                changeSprite(happySprite);
+            }
         }
     }
 
@@ -43,6 +47,10 @@ public class Tamagotchi
                 
                 changeSprite(sadSprite);
 
+            }
+            else
+            {
+                changeSprite(happySprite);
             }
         }
     }
@@ -85,7 +93,7 @@ public class Tamagotchi
     {
         Hunger++;
         Boredom++;
-        if (GetAlive() == false)
+        if (!GetAlive())
         {
             Debug.WriteLine("Dead");
         }
