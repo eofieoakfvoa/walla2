@@ -27,9 +27,8 @@ public class Menu
         //ska fixa senare
         Options.Add(0);
         Options.Add(1);
-        TempHighlightText test1 = new();
 
-        int NextScene = test1.MenuSelection("True", Options, "True");
+        int NextScene = InputHandler.MenuSelection("True", Options, "True");
         if (NextScene == 1)
         {
             

@@ -22,7 +22,7 @@ public class Tamagotchi
         set
         { 
             _Hunger = value;
-            if (_Hunger > 1)
+            if (_Hunger > 8)
             {
                 Debug.WriteLine("HEEHLP");
                 
@@ -38,7 +38,7 @@ public class Tamagotchi
         set
         { 
             _Boredom = value;
-            if (_Boredom > 1)
+            if (_Boredom > 8)
             {
                 
                 changeSprite(sadSprite);

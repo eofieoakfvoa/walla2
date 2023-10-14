@@ -10,6 +10,7 @@ public static class tamagotchiManager
     
     public static void initTamagochiScene()
     {
+        
         ConsoleManager.currentScreen = "Tamagochi";
         //ConsoleManager.renderSprite(happySprite[0], happySprite[1], 20, 3);
         tamagotchiManager.renderSprite();
@@ -17,7 +18,6 @@ public static class tamagotchiManager
         ConsoleManager.addText(12, new string[]{"Center", "Center"});
         ConsoleManager.addText(13, new string[]{"Center", "Center"});
         ConsoleManager.addText(14, new string[]{"Center", "Center"});
-        
         ConsoleManager.Update();
 
 

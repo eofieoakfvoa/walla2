@@ -22,15 +22,14 @@ public class Options
             1,
             2
         };
-        TempHighlightText test1 = new();
 
-        int NextScene =test1.MenuSelection("True", Options, "False");
+        int NextScene = InputHandler.MenuSelection("True", Options, "False");
         //Måste ändå fixa detta senare ksk en class som e hardcoded skulle iallafall se snyggare ut och va hardcoded i båda fallen HAHAHAHAHAHAHAHAHAHAHAHAHAHHAHAHAHAHAHAHAHAHAHHAHAHHAHAHAHAHAHHAHAHAHAHAHAHHAHAHAHAHAHAHAHHAHAHAHAHAHAHAHAHAHAHHAHAHAHAHAHHAHAHHAHAHAHAHHAHAHAHAHHAHAHAHAHAHHAHAHAHAHAH
         while (NextScene > 0)
         {
             if (NextScene == 1)
             {
-                int borderChange = test1.OptionSelection("True");
+                int borderChange = InputHandler.OptionSelection("True");
                 changeBorder(borderChange);
                 ConsoleManager.Update();
             }

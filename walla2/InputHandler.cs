@@ -1,22 +1,22 @@
 using System.Data;
 using System.Diagnostics;
-public class TempHighlightText
+public static class InputHandler
 {
-    List<int> Options = new();
+    static List<int> Options = new();
 
-    int selectedOption = 1;
-    protected ConsoleKeyInfo getKey()
+    static int selectedOption = 1;
+    private static ConsoleKeyInfo GetKey()
     {
         ConsoleKeyInfo temp = Console.ReadKey(true); //true gör så det man skriver inte kommer i consolen
         return temp;
     }
-    public int OptionSelection(string Active)
+    public static int OptionSelection(string Active)
     {
         while (Active == "True")
         {
             //Får en list av knappar där den kollar ifall någon av knapparna är klickade sen så skickar den tillbaka?,
             //försöka komma på något sätt för att inte hardcoda in menyer?
-            ConsoleKeyInfo key = getKey();
+            ConsoleKeyInfo key = GetKey();
             Debug.WriteLine("hi");
             if (key.Key == ConsoleKey.RightArrow)
             {
@@ -34,13 +34,13 @@ public class TempHighlightText
 
     //Up Down funktion som ändrar Selectedoption??
     //Left to right funktion 
-    public int MenuSelection(string Active, List<int> Options, String ClickAble)
+    public static int MenuSelection(string Active, List<int> Options, String ClickAble)
     {
         while (Active == "True")
         {
             //Får en list av knappar där den kollar ifall någon av knapparna är klickade sen så skickar den tillbaka?,
             //försöka komma på något sätt för att inte hardcoda in menyer?
-            ConsoleKeyInfo key = getKey();
+            ConsoleKeyInfo key = GetKey();
             if (key.Key == ConsoleKey.DownArrow)
             {
                 if (selectedOption == 1)
